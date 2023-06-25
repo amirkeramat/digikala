@@ -1,17 +1,10 @@
-import { useRoutes } from "react-router-dom"
-import routes from "./routes"
-import Navbar from './components/navbar/Navbar'
-import Menu from "./components/menu/Menu"
-import Footer from './components/footer/Footer'
+import { useRoutes } from "react-router-dom";
+import routes from "./routes";
+import Layout from "./layout/Layout";
+
 function App() {
-  const router = useRoutes(routes)
-  return (
-    <>
-      <Navbar />
-      {/* {router}
-      <Footer/> */}
-    </>
-  );
+  const router = useRoutes(routes);
+  return <Layout> {router}</Layout>;
 }
 
-export default App
+export default App;
