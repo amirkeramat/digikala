@@ -1,5 +1,4 @@
 /* Start Default Styles */
-
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -8,16 +7,16 @@ html {
 body {
   line-height: 1.6;
   font-size: 1.6rem;
-  font-family: var(--primary-font);
+  font-family: IRANSans;
   direction: rtl;
 }
 
-*,
+/* *,
 *::after,
 *::before {
   outline: none;
   box-sizing: inherit;
-}
+} */
 
 a {
   text-decoration: none;
@@ -25,9 +24,9 @@ a {
   transition: all 400ms ease;
 }
 
-a:hover {
+/* a:hover {
   color: #1e83f0;
-}
+} */
 
 i {
   user-select: none;
