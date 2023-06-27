@@ -1,30 +1,91 @@
-import React from "react";
+import { useState } from "react";
 import useProductState from "../../../hooks/state/useProductState";
+import { FaStar } from "react-icons/fa";
+import {
+  Container,
+  Title,
+  SepRow,
+  RateBox,
+  Rate,
+  RateCount,
+  ColorsBox,
+  ColorTitleBox,
+  ColorTitle,
+  ColorName,
+  ColorsSelectBox,
+  ColorsContainer,
+  ColorBox,
+  InformationList,
+  InformationItem,
+  InformationItemTitle,
+  InformationItemValue,
+} from "./informations.style";
 const Informations = () => {
-  const { mainDetails, rating ,options} = useProductState();
-  options.map(item=>{
-    const {title,values} = item
-    console.log(title,values[values.length-1]);
-  })
+  const { mainDetails, rating, options } = useProductState();
+  const { title, colors } = mainDetails;
+  const [colorName, setColorName] = useState();
+  const selectColorHandler = (colorName) => {
+    setColorName(colorName);
+  };
   return (
-    <div className='container'>
-      <h1>{mainDetails.title}</h1>
-      <div className='w-[80%] h-[2px] bg-red-500'></div>
-      <span className='flex justify-between w-[100px]'>
-        <h6>{rating.rate}</h6>
-        <h6>{rating.count}</h6>
-      </span>
+    <Container>
+      <Title>{title}</Title>
+
+      <SepRow />
+      <RateBox>
+        <Rate>
+          <FaStar className="text-yellow-400" />
+          {rating.rate}
+        </Rate>
+
+        <RateCount>
+          {"("}
+          {rating.count}
+          {")"}
+        </RateCount>
+      </RateBox>
+      <ColorsBox>
+        <ColorTitleBox>
+          <ColorTitle>رنگ:</ColorTitle>
+          <ColorName>{colorName}</ColorName>
+        </ColorTitleBox>
+
+        <ColorsSelectBox className="flex">
+          {colors.map((color) => {
+            const { id, title, hex_code } = color;
+            return (
+              <ColorsContainer key={id} $selected={title === colorName}>
+                <ColorBox
+                  after-dynamic-value={title}
+                  after-dynamic-background={hex_code}
+                  onClick={() => selectColorHandler(title)}
+                  style={{ background: `${hex_code}` }}
+                ></ColorBox>
+              </ColorsContainer>
+            );
+          })}
+        </ColorsSelectBox>
+      </ColorsBox>
+
       <span>
         <h6>ویژگی ها</h6>
-        {options.map(option=>{
-          const {title,values} = option
-          return <p>{values}</p>;
-          
-        }
-          
-        )}
+        <InformationList>
+          {options.map((option) => {
+            const { title, values } = option;
+            return (
+              <InformationItem key={title} >
+                <InformationItemTitle>
+                  {title}
+                  {":"}
+                </InformationItemTitle>
+                <InformationItemValue>{values}</InformationItemValue>
+              </InformationItem>
+            );
+          })}
+        </InformationList>
       </span>
-    </div>
+
+    </Container>
   );
 };
 
