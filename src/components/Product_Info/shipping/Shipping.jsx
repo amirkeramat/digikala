@@ -9,7 +9,6 @@ const Shipping = () => {
     current_price,
     prev_price,
     is_incredible,
-    is_promotion,
     discount_percent,
   } = price;
   return (

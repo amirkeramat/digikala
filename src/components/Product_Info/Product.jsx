@@ -4,7 +4,7 @@ import {Container} from './product.style'
 import Slider from './imageSlider/Slider'
 import Informations from "./informations/Informations";
 import Shipping from './shipping/Shipping'
-import Description from "./description/description";
+import Description from "./description/Description";
 const Product = () => {
   const { id ,images,mainDetails } = useProductState();
   return (

@@ -16,7 +16,7 @@ export default function Navbar() {
       <NavbarLeft>
         <Link>
           <img
-            src='/src/assets/light-logo.png'
+            src='/light-logo.png'
             alt='bluebee-Logo'
             className="mix-blend-color-burn contrast-[1] h-[70px]"
           />
