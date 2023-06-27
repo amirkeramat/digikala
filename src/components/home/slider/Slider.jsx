@@ -24,22 +24,26 @@ const Slider = ({ data, title }) => {
         breakpoints={{
           640: {
             slidesPerView: 2,
-            spaceBetween: 10,
+            spaceBetween: 5,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 10,
           },
           1024: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1324: {
             slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className='mySwiper w-screen md:w-full h-[400px] flex justify-center items-center'>
+        className='mySwiper w-screen sm:w-auto  h-[400px] '>
         {data.products.map((product) => (
-          <SwiperSlide className='w-full flex justify-center' key={product.id}>
+          <SwiperSlide className=' flex justify-center' key={product.id}>
             <ProductCart
               key={product.id}
               id={product.id}
