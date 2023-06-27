@@ -16,7 +16,11 @@ import SubMenu from "./subMenu/SubMenu";
 import SearchBar from "../../header/SearchBar";
 export default function DropDown() {
   const [toggle, setToggle] = useState(false);
-
+  if (toggle) {
+    window.document.body.style.overflowY = "hidden";
+  } else {
+    window.document.body.style.overflowY = "scroll";
+  }
   return (
     <Container>
       <MenuButton>
