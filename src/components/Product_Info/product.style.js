@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
 
 export const Container = tw.div`
-container grid grid-cols-1 md:grid-cols-3 gap-x-6
+container grid grid-cols-1 md:grid-cols-3 gap-6 mt-5
 `;
 
 export const ImgBox = tw.div`
