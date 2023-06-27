@@ -7,7 +7,7 @@ font-bold
 `;
 
 export const SepRow = tw.div`
-w-[80%] h-[2px] bg-blue-600 my-2
+w-full h-[2px] bg-blue-600/20 my-2
 `;
 
 export const RateBox = tw.span`
@@ -39,12 +39,12 @@ flex
 `;
 
 export const ColorsContainer = tw.div`
-ms-4 w-[50px] h-[50px] rounded-full  border border-gray-950 flex justify-center items-center
+ms-4 w-[50px] h-[50px] rounded-full  border border-gray-950 flex justify-center items-center shadow p-0.5
 ${(p) => (p.$selected ? "bg-blue-400" : "bg-white")}
 `;
 
 export const ColorBox = tw.div`
-cursor-pointer w-[80%] relative h-[80%] rounded-full hover:after:absolute hover:after:content-[attr(after-dynamic-value)] hover:after:top-20 hover:after:text-white hover:after:bg-gray-950 hover:after:w-[60px] hover:after:h-[50px] hover:after:flex hover:after:justify-center hover:after:items-center hover:after:rounded-2xl
+cursor-pointer w-[80%] relative h-[80%] rounded-full hover:after:absolute hover:after:content-[attr(after-dynamic-value)] hover:after:top-20 hover:after:text-white hover:after:bg-gray-950 hover:after:w-[60px] hover:after:h-[50px] hover:after:flex hover:after:justify-center hover:after:items-center hover:after:rounded-2xl border-none shadow-xl
 `;
 
 export const InformationList = tw.ul`
@@ -55,8 +55,8 @@ export const InformationItem = tw.li`
 flex
 `;
 export const InformationItemTitle = tw.p`
-text-gray-700
+text-gray-700 whitespace-nowrap
 `;
 export const InformationItemValue = tw.p`
-font-bold ms-4 
+font-bold ms-4 flex flex-wrap 
 `;
