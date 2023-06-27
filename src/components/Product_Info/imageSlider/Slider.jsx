@@ -13,12 +13,19 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 
 import useProductState from "../../../hooks/state/useProductState";
 
+import ImageLoader from "../../common/imageLoader/ImageLoader";
+
 export default function Slider() {
+  const [showLoader, setShowLoader] = useState(true);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { images } = useProductState();
 
+  const onImageLoad = () => {
+    setShowLoader(false);
+  };
+
   return (
-    <div className='container'>
+    <div className="container">
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
@@ -28,10 +35,12 @@ export default function Slider() {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className='mySwiper2'>
-        {images.map((image) => (
-          <SwiperSlide>
-            <img src={image} />
+        className="mySwiper2"
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} onLoad={onImageLoad} />
+            {showLoader && <ImageLoader />}
           </SwiperSlide>
         ))}
       </Swiper>
@@ -42,10 +51,12 @@ export default function Slider() {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className='mySwiper'>
-        {images.map((image) => (
-          <SwiperSlide>
-            <img src={image}  />
+        className="mySwiper"
+      >
+        {images.map((image,index) => (
+          <SwiperSlide key={index}>
+            <img src={image} onLoad={onImageLoad} />
+            {showLoader && <ImageLoader />}
           </SwiperSlide>
         ))}
       </Swiper>
