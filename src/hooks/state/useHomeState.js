@@ -4,6 +4,8 @@ const useHomeState = () => {
   const state = useSelector((state) => state.homeStore);
   // array of objects are filtered by id because there are duplicate items in the api
   return {
+    loading:state.loading,
+    error:state.error,
     incredible: {
       loading: state.incredible.loading,
       url: state.incredible.url,

@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import {Container,Title} from './slider.style'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -10,11 +9,11 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation, Pagination } from "swiper";
-import ProductCart from "../../productCart/ProductCart";
-const Slider = ({data , title}) => {
+import ProductCart from "../../common/productCart/ProductCart";
+const Slider = ({ data, title }) => {
   return (
-    <div className='container mt-10 bg-red-500'>
-      <h1 className='text-white'>{title}</h1>
+    <Container>
+      <Title>{title}</Title>
       <Swiper
         slidesPerView={1}
         spaceBetween={5}
@@ -32,17 +31,18 @@ const Slider = ({data , title}) => {
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className='mySwiper w-screen md:w-full h-[350px] flex justify-center items-center'>
+        className='mySwiper w-screen md:w-full h-[400px] flex justify-center items-center'>
         {data.products.map((product) => (
           <SwiperSlide className='w-full flex justify-center' key={product.id}>
             <ProductCart
               key={product.id}
+              id={product.id}
               image={product.image}
               title={product.title_fa}
               current_price={product.price.current_price}
@@ -53,7 +53,7 @@ const Slider = ({data , title}) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </Container>
   );
 };
 

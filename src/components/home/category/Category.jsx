@@ -12,10 +12,10 @@ function Category() {
   const { categories } = useHomeState();
   return (
     <Container>
-      <CategoryTitle>دسته بندی دیجیکالا</CategoryTitle>
+      <CategoryTitle>دسته بندی بلو بی</CategoryTitle>
       {categories.map((category) => {
         return (
-          <Link to={`category/${category.code}`} key={category.id}>
+          <Link  to={`category/${category.code}`} key={category.id}>
             <CategoryBox>
               <Img src={category.logo} alt='' />
               <Title>{category.title_fa}</Title>

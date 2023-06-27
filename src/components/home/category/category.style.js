@@ -1,7 +1,8 @@
 import tw from "tailwind-styled-components";
 
 export const Container = tw.div`
-grid  grid-cols-2 md:grid-cols-4 gap-4 container
+grid  grid-cols-2 md:grid-cols-4 gap-1 md:gap-4 container justify-center items-center
+p-12
 `;
 
 export const CategoryBox = tw.div`

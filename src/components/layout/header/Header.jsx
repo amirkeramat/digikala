@@ -16,8 +16,9 @@ export default function Navbar() {
       <NavbarLeft>
         <Link>
           <img
-            src='https://www.digikala.com/statics/img/svg/logo.svg'
-            alt='digiKala-Logo'
+            src='/src/assets/light-logo.png'
+            alt='bluebee-Logo'
+            className="mix-blend-color-burn contrast-[1] h-[70px]"
           />
         </Link>
         <SearchBox>

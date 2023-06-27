@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  loading: 'idle',
+  loading: "idle",
   error: "",
 };
 // export const fetchPushDate = createAsyncThunk(
@@ -28,16 +28,16 @@ const homeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchGetData.pending, (state) => {
-      state.loading = 'loading';
+      state.loading = "loading";
     });
     builder.addCase(fetchGetData.fulfilled, (state, action) => {
-      state.loading = 'fulfilled';
+      state.loading = "fulfilled";
       Object.entries(action.payload).map(([key, value]) => {
         state[key] = value;
       });
     });
     builder.addCase(fetchGetData.rejected, (state, action) => {
-      state.loading = 'reject';
+      state.loading = "reject";
       state.error = action.err.message;
     });
   },

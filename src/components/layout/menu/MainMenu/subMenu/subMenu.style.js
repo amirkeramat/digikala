@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
 
 export const ListItem = tw.li`
-    group/subMenu text-white  hover:bg-gray-50 hover:text-red-500 w-[150px] cursor-pointer text-center whitespace-nowrap py-6 flex items-center justify-evenly
+    group/subMenu text-white  hover:bg-gray-50 hover:text-yellow-500 w-[150px] cursor-pointer text-center whitespace-nowrap py-6 flex items-center justify-evenly
 `;
 
 export const ListTitle = tw.h6`
