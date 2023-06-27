@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 export const Container = tw.menu`
-    flex flex-col
+    flex flex-col md:hidden
 `;
 export const MenuItems = tw.div`
      absolute inset-0 z-10 bg-gray-100 transition-all duration-700 ease-in-out space-y-2 overflow-y-auto
