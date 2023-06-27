@@ -4,10 +4,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper";
-
+import { useState } from "react";
 import { Container } from "./banners.style";
-
+import ImageLoader from '../../../common/imageLoader/ImageLoader'
 const Banners = ({ data }) => {
+  const [showLoader,setShowLoader] = useState(true)
+  const onImageLoad = ()=>{
+    setShowLoader(false)
+  }
   return (
     <Container>
       <Swiper
@@ -24,7 +28,8 @@ const Banners = ({ data }) => {
         className='mySwiper w-screen sm:w-full md:h-[300px]'>
         {data.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <img className="" src={banner.image} alt={banner.title} />
+            <img className="" src={banner.image} alt={banner.title} onLoad={onImageLoad} />
+            {showLoader && <ImageLoader/>}
           </SwiperSlide>
         ))}
       </Swiper>

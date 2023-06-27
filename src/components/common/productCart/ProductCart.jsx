@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import ImageLoader from "../imageLoader/ImageLoader";
 import {
   Container,
   Title,
@@ -15,35 +16,39 @@ export default function ProductCart({
   current_price,
   discount_percent,
   is_incredible,
-  id
+  id,
 }) {
+  const [showLoader, setShowLoader] = useState(true);
+  const onImageLoad = () => {
+    setShowLoader(false);
+  };
   return (
     <Link to={`productInfo/${title}/${id}`}>
-    <Container>
-      <img src={image} alt='' />
-      <Title>{title}</Title>
-      <PriceContainer>
-        {is_incredible ? (
-          <Price>
-            <PrvPriceNumber>
-              {prev_price.toLocaleString()}
-              {"تومان"}
-            </PrvPriceNumber>
+      <Container>
+        <img src={image} alt="" onLoad={onImageLoad} />
+        {showLoader && <ImageLoader />}
+        <Title>{title}</Title>
+        <PriceContainer>
+          {is_incredible ? (
+            <Price>
+              <PrvPriceNumber>
+                {prev_price.toLocaleString()}
+                {"تومان"}
+              </PrvPriceNumber>
+              <h6>
+                {current_price.toLocaleString()}
+                {"تومان"}
+              </h6>
+            </Price>
+          ) : (
             <h6>
               {current_price.toLocaleString()}
               {"تومان"}
             </h6>
-          </Price>
-        ) : (
-          <h6>
-            {current_price.toLocaleString()}
-            {"تومان"}
-          </h6>
-        )}
-        {discount_percent ? <DiscPrice>{discount_percent}%</DiscPrice> : null}
-      </PriceContainer>
-    </Container>
+          )}
+          {discount_percent ? <DiscPrice>{discount_percent}%</DiscPrice> : null}
+        </PriceContainer>
+      </Container>
     </Link>
-    
   );
 }
