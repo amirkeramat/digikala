@@ -51,7 +51,7 @@ export default function Slider() {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
+        className="mySwiper hidden md:block"
       >
         {images.map((image,index) => (
           <SwiperSlide key={index}>
