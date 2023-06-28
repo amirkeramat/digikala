@@ -9,6 +9,7 @@ import {
   DiscPrice,
 } from "./productCart.style";
 import { Link } from "react-router-dom";
+import {rialToToman} from '../../../helpers/index'
 export default function ProductCart({
   image,
   title,
@@ -32,17 +33,17 @@ export default function ProductCart({
           {discount_percent ? (
             <Price>
               <PrvPriceNumber>
-                {prev_price.toLocaleString()}
+                {rialToToman(prev_price).toLocaleString()}
                 {"تومان"}
               </PrvPriceNumber>
               <h6>
-                {current_price.toLocaleString()}
+                {rialToToman(current_price).toLocaleString()}
                 {"تومان"}
               </h6>
             </Price>
           ) : (
             <h6>
-              {current_price.toLocaleString()}
+              {rialToToman(current_price).toLocaleString()}
               {"تومان"}
             </h6>
           )}
