@@ -2,15 +2,10 @@ import React from "react";
 import useProductState from "../../../hooks/state/useProductState";
 import { FiShoppingBag } from "react-icons/fi";
 import { FaShippingFast } from "react-icons/fa";
-import {SepRow} from './Shipping.style'
+import { SepRow } from "./Shipping.style";
 const Shipping = () => {
   const { price } = useProductState();
-  const {
-    current_price,
-    prev_price,
-    is_incredible,
-    discount_percent,
-  } = price;
+  const { current_price, prev_price, is_incredible, discount_percent } = price;
   return (
     <div className="h-[500px] flex flex-col justify-evenly bg-gray-300/50 shadow-xl rounded-xl p-6">
       <h1 className="font-bold text-3xl">فروشنده</h1>
@@ -25,7 +20,9 @@ const Shipping = () => {
       <SepRow />
 
       <span className="">
-        <p className="text-gray-400">موجود در انبار فروشنده:</p>
+        <p className="text-gray-400 bg-gray-100 w-[150px] rounded-xl">
+          موجود در انبار فروشنده:
+        </p>
         <p className="text-red-400 flex items-center">
           <FaShippingFast />
           ارسال فوری
@@ -53,7 +50,7 @@ const Shipping = () => {
             </span>
           </span>
         ) : (
-          <span className="flex items-center justify-center">
+          <span className="flex items-center justify-center bg-gray-950/5 p-2 rounded-2xl shadow-xl">
             <p>
               {current_price.toLocaleString()}
               {"تومان"}
