@@ -5,6 +5,7 @@ import { Hero } from "../../components/home/hero/Hero";
 import Incredible from "../../components/home/slider/incredible/Incredible";
 import Category from "../../components/home/category/Category";
 import BestSelling from "../../components/home/slider/bestSelling/BestSelling";
+import PageLoader from "../../components/common/pageLoader/PageLoader";
 export default function Home() {
   useEffect(() => {
     dispatch(fetchGetData());
@@ -22,7 +23,7 @@ export default function Home() {
           <BestSelling />
         </>
       ) : (
-        <div>Loading</div>
+        <PageLoader/>
       )}
     </>
   );
