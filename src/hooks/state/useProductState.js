@@ -25,6 +25,7 @@ const useProductState = () => {
         (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
       ),
     },
+    lastComments:product?.last_comments,
     recommended: {
       products: recommendations,
     },
