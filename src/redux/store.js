@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import homeReducer from "./slices/homeSlice";
+import homeState from "./slices/homeSlice";
 import singleProductReducer from "./slices/productSlice";
+import commentState from "./slices/commentsSlice";
 const store = configureStore({
   reducer: {
-    homeStore: homeReducer,
+    homeStore: homeState,
     singleProduct: singleProductReducer,
+    comments: commentState,
   },
 });
 
