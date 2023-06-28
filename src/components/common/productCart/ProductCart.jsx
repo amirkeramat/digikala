@@ -23,13 +23,13 @@ export default function ProductCart({
     setShowLoader(false);
   };
   return (
-    <Link to={`productInfo/${title}/${id}`}>
+    <Link to={`/productInfo/${title}/${id}`}>
       <Container>
         <img src={image} alt="" onLoad={onImageLoad} />
         {showLoader && <ImageLoader />}
         <Title>{title}</Title>
         <PriceContainer>
-          {is_incredible ? (
+          {discount_percent ? (
             <Price>
               <PrvPriceNumber>
                 {prev_price.toLocaleString()}
