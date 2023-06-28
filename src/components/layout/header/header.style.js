@@ -2,7 +2,7 @@ import tw from "tailwind-styled-components";
 
 
 export const Container = tw.header`
-container w-full flex justify-between p-2 flex-wrap
+container w-full flex justify-between py-2 px-4 flex-wrap
 `;
 export const NavbarLeft = tw.div`
 left-side flex items-center justify-center md:justify-evenly flex-1
