@@ -1,7 +1,10 @@
 import Loader from "../../../assets/imageLoader.svg";
 const ImageLoader = () => {
   return (
-    <img className="w-full" src={Loader}  />
+    <div className="w-full">
+    <img className="w-[80%]" src={Loader}  />
+
+    </div>
   )
 }
 
