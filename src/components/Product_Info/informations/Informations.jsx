@@ -110,7 +110,15 @@ const Informations = () => {
           <CiWarning />
           {":"}
         </i>
-        <p> {return_reason_alert}</p>
+        {return_reason_alert !== null ? (
+          <p> {return_reason_alert}</p>
+        ) : (
+          <p>
+            درخواست مرجوع کردن کالا  با دلیل "انصراف از خرید" تنها
+            در صورتی قابل تایید است که کالا در شرایط اولیه باشد (در صورت پلمپ
+            بودن، کالا نباید باز شده باشد).
+          </p>
+        )}
       </span>
     </Container>
   );
