@@ -6,7 +6,8 @@ export const SINGLE_PRODUCT = "https://leverapi.f4rd1n.ir/api/digikala/product/"
 // "https://leverapi.f4rd1n.ir/api/digikala/product/[productId]";
 
 export const PRODUCT_COMMENTS =
-  "https://leverapi.f4rd1n.ir/api/digikala/product/[productId]/comments?page=[page]";
+  "https://leverapi.f4rd1n.ir/api/digikala/product/";
+  // "https://leverapi.f4rd1n.ir/api/digikala/product/[productId]/comments?page=[page]";
 
 export const CATEGORY =
   "https://leverapi.f4rd1n.ir/api/digikala/categories/[categoryId]/search?page=[page]";
