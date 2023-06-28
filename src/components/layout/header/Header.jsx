@@ -18,7 +18,7 @@ export default function Navbar() {
           <img
             src='/light-logo.png'
             alt='bluebee-Logo'
-            className="mix-blend-color-burn contrast-[1] h-[70px]"
+            className="mix-blend-color-burn contrast-[1] h-[70px] ms-4 md:ms-0"
           />
         </Link>
         <SearchBox>
