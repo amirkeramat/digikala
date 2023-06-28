@@ -11,7 +11,7 @@ const useCommentsState = () => {
     sortOptions: comments.sort_options,
     mediaComments: comments.media_comments,
     pager: {
-      currentPage: comments.pager.current_pager,
+      currentPage: comments.pager.current_page,
       totalPages: comments.pager.total_pages,
       totalItems: comments.pager.total_items,
     },
