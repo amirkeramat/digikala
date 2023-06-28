@@ -4,15 +4,15 @@ export const Container = tw.menu`
 `;
 export const MenuItems = tw.div`
      absolute inset-0 z-10 bg-gray-100 transition-all duration-700 ease-in-out space-y-2 overflow-y-auto
-     ${(p) => (p.$toggle ? "max-w-full w-full opacity-100" : "max-w-0 w-0 opacity-0")}
+     ${(p) => (p.$toggle ? "max-w-full opacity-100" : "max-w-0 opacity-0")}
       
 `;
 export const SubMenuItems = tw.ul`
-     mt-16 p-2
+     mt-20 p-2
       
 `;
 export const MenuButton = tw.i`
-block md:hidden absolute top-12 right-0 bg-gray-950 text-white z-20 text-4xl
+block md:hidden absolute top-12 right-2 bg-gray-950 text-white z-20 text-4xl
 `;
 export const UseFullLinks = tw.li`
 flex   items-center my-4
