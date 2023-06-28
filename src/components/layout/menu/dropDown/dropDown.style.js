@@ -12,7 +12,7 @@ export const SubMenuItems = tw.ul`
       
 `;
 export const MenuButton = tw.i`
-block md:hidden absolute top-12 right-2 z-20
+block md:hidden absolute top-12 right-0 bg-gray-950 text-white z-20 text-4xl
 `;
 export const UseFullLinks = tw.li`
 flex   items-center my-4
