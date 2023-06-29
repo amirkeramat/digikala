@@ -2,20 +2,17 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchCategoryProduct } from "../../redux/slices/categorySlice";
-import useCategoriesState from "../../hooks/state/useCategoryState";
-import PageLoader from "../../components/common/pageLoader/PageLoader";
-import CategoriesProducts from "../../components/categories/CategoriesProducts";
+import CategoriesProducts from "../../components/categoreis/CtaegoriesProducts";
 const Categories = () => {
   const dispatch = useDispatch();
-  const { categoryName,pageNumber } = useParams();
+  const { categoryName } = useParams();
   useEffect(() => {
     dispatch(
-      fetchCategoryProduct({ name: categoryName, page: Number(pageNumber) })
+      fetchCategoryProduct({ name: categoryName, page: 1 })
     );
   }, [categoryName]);
-  const { loading } = useCategoriesState();
   return (
-    <>{loading === "fulfilled" ? <CategoriesProducts /> : <PageLoader />}</>
+    <CategoriesProducts />
   );
 };
 

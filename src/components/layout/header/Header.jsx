@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <Container>
       <NavbarLeft>
-        <Link>
+        <Link to={"/"}>
           <img
             src='/light-logo.png'
             alt='bluebee-Logo'

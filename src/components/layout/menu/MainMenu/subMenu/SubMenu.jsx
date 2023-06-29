@@ -20,7 +20,7 @@ export default function SubMenu({ id, title, icon, sub }) {
             <SubDropdownItem key={item.id}>
               <SepLine />
               <SubDropdownLink>
-                <Link to={`category/${item.code}/1`}>{item.title}</Link>
+                <Link to={`category/${item.code}`}>{item.title}</Link>
               </SubDropdownLink>
             </SubDropdownItem>
           ))}

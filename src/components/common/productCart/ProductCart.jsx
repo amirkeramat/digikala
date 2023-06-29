@@ -24,7 +24,7 @@ export default function ProductCart({
     setShowLoader(false);
   };
   return (
-    <Link to={`/productInfo/${id}`}>
+    <Link to={`/productInfo/${id}`} className="flex justify-center items-center">
       <Container>
         <img src={image} alt="" onLoad={onImageLoad} />
         {showLoader && <ImageLoader />}

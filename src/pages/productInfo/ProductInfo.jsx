@@ -11,7 +11,7 @@ export default function ProductInfo() {
   useEffect(() => {
     dispatch(getProductInfo({ id: Number(productId) }));
     dispatch(fetchComments({ id: Number(productId) , page:1 }));
-    return () => dispatch(getProductInfo());
+    // return () => dispatch(getProductInfo());
   }, [productId]);
   const { loading } = useSelector((state) => state.singleProduct);
   return <>{loading === "fulfilled" ? <Product /> : <PageLoader/>}</>;

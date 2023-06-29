@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
 
 export const Container = tw.section`
-shadow-xl shadow-gray-900 w-[200px] h-[350px]  bg-gray-50 p-4 rounded-xl  flex flex-col justify-evenly items-start
+shadow-md shadow-gray-900/50 w-[200px] h-[350px]  bg-gray-50 p-4 rounded-xl  flex flex-col justify-evenly items-start
 `;
 
 export const Title = tw.h5`
