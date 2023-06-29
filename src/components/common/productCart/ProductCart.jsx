@@ -24,7 +24,7 @@ export default function ProductCart({
     setShowLoader(false);
   };
   return (
-    <Link to={`/productInfo/${title}/${id}`}>
+    <Link to={`/productInfo/${id}`}>
       <Container>
         <img src={image} alt="" onLoad={onImageLoad} />
         {showLoader && <ImageLoader />}
