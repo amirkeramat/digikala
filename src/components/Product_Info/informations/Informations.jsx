@@ -90,8 +90,8 @@ const Informations = () => {
                     {":"}
                   </InformationItemTitle>
                   <InformationItemValue>
-                    {values.map((value) => (
-                      <p className="text-justify">
+                    {values.map((value,index) => (
+                      <p key={index} className="text-justify">
                         {value}
                         {","}
                       </p>

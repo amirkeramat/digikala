@@ -14,7 +14,7 @@ export const RateBox = tw.span`
 flex justify-evenly w-[100px]
 `;
 
-export const Rate = tw.p`
+export const Rate = tw.span`
 flex items-baseline
 `;
 export const RateCount = tw.p`
@@ -57,6 +57,6 @@ flex
 export const InformationItemTitle = tw.p`
 text-gray-700 whitespace-nowrap
 `;
-export const InformationItemValue = tw.p`
+export const InformationItemValue = tw.span`
 font-bold ms-4 flex flex-wrap 
 `;
