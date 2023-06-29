@@ -10,7 +10,8 @@ export const PRODUCT_COMMENTS =
   // "https://leverapi.f4rd1n.ir/api/digikala/product/[productId]/comments?page=[page]";
 
 export const CATEGORY =
-  "https://leverapi.f4rd1n.ir/api/digikala/categories/[categoryId]/search?page=[page]";
+  "https://leverapi.f4rd1n.ir/api/digikala/categories/";
+  // "https://leverapi.f4rd1n.ir/api/digikala/categories/[categoryId]/search?page=[page]";
 
 export const SEARCH_PRODUCT =
   "https://leverapi.f4rd1n.ir/api/digikala/search?q=[query]&page=[page]";
