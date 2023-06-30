@@ -9,7 +9,7 @@ import {
   DiscPrice,
 } from "./productCart.style";
 import { Link } from "react-router-dom";
-import {rialToToman} from '../../../helpers/index'
+import { rialToToman } from "../../../helpers/index";
 export default function ProductCart({
   image,
   title,
@@ -24,10 +24,18 @@ export default function ProductCart({
     setShowLoader(false);
   };
   return (
-    <Link to={`/productInfo/${id}`} className="flex justify-center items-center">
+    <Link
+      to={`/productInfo/${id}`}
+      className="flex justify-center items-center w-full "
+    >
       <Container>
-        <img src={image} alt="" onLoad={onImageLoad} />
         {showLoader && <ImageLoader />}
+        <img
+          src={image}
+          className="w-[240px] h-[240px]"
+          alt=""
+          onLoad={onImageLoad}
+        />
         <Title>{title}</Title>
         <PriceContainer>
           {discount_percent ? (

@@ -4,7 +4,7 @@ import useProductState from '../../../hooks/state/useProductState'
 const RecommendProducts = () => {
   const {recommended} = useProductState()
   return (
-    <div className="col-span-1 md:col-span-3 w-full">
+    <div className="col-span-1 md:col-span-3 w-full ">
       <Slider data={recommended} title={"کالاهای مشابه"} />
     </div>
   );

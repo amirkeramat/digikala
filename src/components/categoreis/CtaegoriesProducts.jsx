@@ -11,7 +11,7 @@ const CategoriesProducts = () => {
       {loading === "fulfilled" ? (
         <div
           ref={productsRef}
-          className="grid grid-cols-1  sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 my-10 2xl:grid-cols-5"
+          className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-2  my-10 2xl:grid-cols-5 p-8"
         >
           {products.products.map((product) => (
             <ProductCart

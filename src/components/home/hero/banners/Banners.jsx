@@ -27,7 +27,7 @@ const Banners = ({ data }) => {
         modules={[Autoplay, Pagination]}
         className='mySwiper w-screen sm:w-full md:h-[300px]'>
         {data.map((banner) => (
-          <SwiperSlide key={banner.id}>
+          <SwiperSlide className="relative" key={banner.id}>
             <img className="" src={banner.image} alt={banner.title} onLoad={onImageLoad} />
             {showLoader && <ImageLoader/>}
           </SwiperSlide>

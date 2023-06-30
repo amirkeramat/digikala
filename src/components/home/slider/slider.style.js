@@ -1,9 +1,10 @@
 import tw from "tailwind-styled-components"
 
 export const Container = tw.section`
-container mt-10 bg-blue-200/50 
+container mt-10 border border-gray-950/10 rounded-xl shadow-xl 
+shadow-gray-950/10 
 `;
 
 export const Title = tw.h1`
-'text-white m-4 text-4xl font-bold  p-4
+'text-white  text-4xl font-bold px-4 py-5
 `;

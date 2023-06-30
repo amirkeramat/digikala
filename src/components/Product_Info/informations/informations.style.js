@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 export const Container = tw.section`
-container
+container p-4
 `;
 export const Title = tw.h1`
 font-bold

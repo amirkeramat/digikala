@@ -6,7 +6,7 @@ const MoreInformation = () => {
   const [showMore, setShowMore] = useState(false);
   return (
     <div
-      className={`col-span-1 md:col-span-3 relative transition-all duration-500 ease-in-out overflow-hidden shadow-xl shadow-gray-950/10 my-10 ${
+      className={`col-span-1 md:col-span-3 relative transition-all duration-500 ease-in-out overflow-hidden shadow-xl shadow-gray-950/10 my-10 p-4 ${
         showMore ? "max-h-auto h-full" : "max-h-[220px] h-[220px]"
       }`}
     >

@@ -33,7 +33,7 @@ const Comments = () => {
             <p>مرتب سازی</p>
             <p>تعداد دیدگاه:{comments.length}</p>
           </span>
-          {comments ? (
+          {comments.length ? (
             <>
               {comments.map((comment) => (
                 <div key={comment.id} className="shadow-xl border border-gray-950/20 my-4 rounded-xl">

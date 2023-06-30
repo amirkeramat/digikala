@@ -41,9 +41,9 @@ const Slider = ({ data, title }) => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className='mySwiper w-screen sm:w-auto  h-[400px] '>
+        className='mySwiper w-screen sm:w-auto p-0  md:p-4 h-[450px] '>
         {data.products.map((product) => (
-          <SwiperSlide className=' flex justify-center' key={product.id}>
+          <SwiperSlide className=' flex justify-center h-[400px]' key={product.id}>
             <ProductCart
               key={product.id}
               id={product.id}

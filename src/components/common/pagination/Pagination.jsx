@@ -17,7 +17,7 @@ const Pagination = ({ totalPages, targetRef }) => {
       breakLabel="..."
       nextLabel="بعدی >"
       onPageChange={handlePageClick}
-      pageRangeDisplayed={3}
+      pageRangeDisplayed={5}
       pageCount={totalPages}
       previousLabel="< قبلی"
       activeClassName="bg-blue-500"
