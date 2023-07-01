@@ -1,18 +1,13 @@
 import { useSelector } from "react-redux";
 
 const useCategoriesState = () => {
-  const categories = useSelector((state) => state.categoriesStore);
-  const { loading, error, products } = categories;
-  const { pager } = products;
+  const state = useSelector((state) => state.categoriesStore);
   return {
-    loading,
-    error,
-    products,
-    pager: {
-      currentPage: pager?.current_page,
-      totalPages: pager?.total_pages,
-      totalItems: pager?.total_items,
-    },
+    loading:state.loading,
+    error:state.error,
+    products:state.products,
+    pager:state.pager,
+    seo:state.seo
   };
 };
 
