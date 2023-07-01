@@ -5,6 +5,7 @@ const initialState = {
   loading: "idle",
   comments: [],
   error: null,
+  pager:{}
 };
 export const fetchComments = createAsyncThunk(
   "comment/fetchComments",
@@ -28,7 +29,8 @@ const commentsSlice = createSlice({
     });
     builder.addCase(fetchComments.fulfilled, (state, action) => {
       state.loading = "fulfilled";
-      state.comments = action.payload;
+      state.comments = action.payload.comments;
+      state.pager = action.payload.pager;
     });
     builder.addCase(fetchComments.rejected, (state, action) => {
       (state.loading = "rejected"), (state.error = action.error);
