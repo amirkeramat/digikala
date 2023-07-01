@@ -27,6 +27,7 @@ export default function ProductCart({
     <Link
       to={`/productInfo/${id}`}
       className="flex justify-center items-center w-full "
+      onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
     >
       <Container>
         {showLoader && <ImageLoader />}

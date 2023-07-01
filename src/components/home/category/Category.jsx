@@ -15,9 +15,15 @@ function Category() {
       <CategoryTitle>دسته بندی بلو بی</CategoryTitle>
       {categories.map((category) => {
         return (
-          <Link  to={`category/${category.code}`} key={category.id}>
+          <Link
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            }
+            to={`category/${category.code}`}
+            key={category.id}
+          >
             <CategoryBox>
-              <Img src={category.logo} alt='' />
+              <Img src={category.logo} alt="" />
               <Title>{category.title_fa}</Title>
             </CategoryBox>
           </Link>
