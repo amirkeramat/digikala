@@ -1,19 +1,28 @@
-import { useRef } from "react";
 import useCategoriesState from "../../hooks/state/useCategoryState";
 import ProductCart from "../common/productCart/ProductCart";
 import Pagination from "../common/pagination/Pagination";
 import PageLoader from "../common/pageLoader/PageLoader";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchCategoryProduct } from "../../redux/slices/categorySlice";
 const CategoriesProducts = () => {
   const { products, loading, pager } = useCategoriesState();
-  const productsRef = useRef();
+  const { categoryName } = useParams();
+  const dispatch = useDispatch();
+  const oncPageChangeHandler = (page) => {
+    dispatch(
+      fetchCategoryProduct({
+        name: categoryName,
+        page,
+      })
+    );
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <>
-      {loading === "fulfilled" ? (
-        <div
-          ref={productsRef}
-          className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-2  my-10 2xl:grid-cols-5 p-8"
-        >
-          {products.products.map((product) => (
+      {loading === "fulfilled" && products.length ? (
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2  my-10 2xl:grid-cols-5 p-8 container">
+          {products.map((product) => (
             <ProductCart
               key={product.id}
               id={product.id}
@@ -27,11 +36,19 @@ const CategoriesProducts = () => {
           ))}
         </div>
       ) : (
-        <div className="container"><PageLoader /></div>
-        
+        <div className="container">
+          <PageLoader />
+        </div>
       )}
-
-      <Pagination targetRef={productsRef} totalPages={pager.totalPages} />
+      {products.length ? (
+        <Pagination
+          currentPage={pager.current_page}
+          totalPages={pager.total_pages}
+          limit={20}
+          pagesCutCount={5}
+          onPageChange={oncPageChangeHandler}
+        />
+      ) : null}
     </>
   );
 };
