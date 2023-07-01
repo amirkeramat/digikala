@@ -3,7 +3,9 @@ import axios from "axios";
 import { CATEGORY } from "../../api";
 const initialState = {
   loading: "idle",
-  products:{},
+  products:[],
+  pager:{},
+  seo:{},
   error: null,
 };
 
@@ -30,7 +32,9 @@ const categoriesSlice = createSlice({
     });
     builder.addCase(fetchCategoryProduct.fulfilled, (state, action) => {
       state.loading = "fulfilled";
-      state.products = action.payload;
+      state.products = action.payload.products
+      state.pager = action.payload.pager
+      state.seo = action.payload.seo
     });
     builder.addCase(fetchCategoryProduct.rejected, (state, action) => {
       (state.loading = "rejected"), (state.error = action.error);
