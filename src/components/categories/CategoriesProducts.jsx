@@ -5,6 +5,7 @@ import PageLoader from "../common/pageLoader/PageLoader";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchCategoryProduct } from "../../redux/slices/categorySlice";
+import { Container } from "./categoriesProducts.style";
 const CategoriesProducts = () => {
   const { products, loading, pager } = useCategoriesState();
   const { categoryName } = useParams();
@@ -21,7 +22,7 @@ const CategoriesProducts = () => {
   return (
     <>
       {loading === "fulfilled" && products.length ? (
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2  my-10 2xl:grid-cols-5 p-8 container">
+        <Container>
           {products.map((product) => (
             <ProductCart
               key={product.id}
@@ -34,11 +35,9 @@ const CategoriesProducts = () => {
               is_incredible={product.price.is_incredible}
             />
           ))}
-        </div>
+        </Container>
       ) : (
-        <div className="container">
-          <PageLoader />
-        </div>
+        <PageLoader />
       )}
       {products.length ? (
         <Pagination
