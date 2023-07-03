@@ -1,4 +1,3 @@
-
 import { Li, Ul } from "./pagination.style";
 
 const range = (start, end) => {
@@ -23,16 +22,13 @@ const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
   }
 };
 
-const PaginationItem = ({ page, currentPage, isDisabled, title, arg,onPageChange }) => {
-  // const dispatch = useDispatch();
-  // const onPageChangeHandler = (page) => {
-  //   if (arg.name) {
-  //     dispatch(fetchCategoryProduct({ name: arg.name, page }));
-  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  //   } else if (arg.id) {
-  //     dispatch(fetchComments({ id: arg.id, page }));
-  //   }
-  // };
+const PaginationItem = ({
+  page,
+  currentPage,
+  isDisabled,
+  title,
+  onPageChange,
+}) => {
   return (
     <Li
       $isDisabled={isDisabled}
@@ -47,30 +43,29 @@ const PaginationItem = ({ page, currentPage, isDisabled, title, arg,onPageChange
 const Pagination = ({
   currentPage,
   onPageChange,
-  // total,
-  // limit,
   totalPages,
   pagesCutCount,
+  // total,
+  // limit,
 }) => {
   // const pagesCount = Math.ceil(total / limit);
   const pagesCount = totalPages > 100 ? (totalPages = 100) : totalPages;
   const pagesCut = getPagesCut({ pagesCount, pagesCutCount, currentPage });
   const pages = range(pagesCut.start, pagesCut.end);
-  console.log(pages);
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === pagesCount;
   return (
     <Ul>
       <PaginationItem
         page={1}
-        title="First"
+        title="اول"
         currentPage={currentPage}
         onPageChange={() => onPageChange(1)}
         isDisabled={isFirstPage}
       />
       <PaginationItem
         page={currentPage - 1}
-        title="Prev"
+        title="قبلی"
         currentPage={currentPage}
         onPageChange={() => onPageChange(currentPage - 1)}
         isDisabled={isFirstPage}
@@ -86,14 +81,14 @@ const Pagination = ({
       ))}
       <PaginationItem
         page={currentPage + 1}
-        title="Next"
+        title="بعدی"
         currentPage={currentPage}
         onPageChange={() => onPageChange(currentPage + 1)}
         isDisabled={isLastPage}
       />
       <PaginationItem
         page={pagesCount}
-        title="Last"
+        title="آحر"
         currentPage={currentPage}
         onPageChange={() => onPageChange(pagesCount)}
         isDisabled={isLastPage}
