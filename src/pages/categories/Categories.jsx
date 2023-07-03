@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchCategoryProduct } from "../../redux/slices/categorySlice";
-import CategoriesProducts from "../../components/categoreis/CtaegoriesProducts";
+import CategoriesProducts from "../../components/categories/CategoriesProducts";
 const Categories = () => {
   const dispatch = useDispatch();
   const { categoryName } = useParams();
