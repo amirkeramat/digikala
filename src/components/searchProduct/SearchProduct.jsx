@@ -25,24 +25,25 @@ const SearchProduct = () => {
     <>
       {products.length ? (
         <Container>
-          <div className="col-span-4">
+          <div className=" col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 2xl:col-span-5">
             <h5>جست جوی پیشرفته</h5>
             <form>
-
+              <input type="text" name="" id="" />
+              
             </form>
           </div>
-            {products.map((product) => (
-              <ProductCart
-                key={product.id}
-                id={product.id}
-                image={product.image}
-                title={product.title_fa}
-                current_price={product.price.current_price}
-                discount_percent={product.price.discount_percent}
-                prev_price={product.price.prev_price}
-                is_incredible={product.price.is_incredible}
-              />
-            ))}
+          {products.map((product) => (
+            <ProductCart
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              title={product.title_fa}
+              current_price={product.price.current_price}
+              discount_percent={product.price.discount_percent}
+              prev_price={product.price.prev_price}
+              is_incredible={product.price.is_incredible}
+            />
+          ))}
         </Container>
       ) : (
         <PageLoader />
