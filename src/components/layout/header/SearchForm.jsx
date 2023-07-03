@@ -11,7 +11,7 @@ const SearchForm = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm();
   const searchHandler = (data) => {
-    if (data.searchValue.trim().length) {
+    if (data.searchValue.trim()) {
       navigate(`/search/${data.searchValue.trim()}/1`);
       reset();
     }

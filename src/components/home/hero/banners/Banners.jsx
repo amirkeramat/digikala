@@ -8,10 +8,10 @@ import { useState } from "react";
 import { Container } from "./banners.style";
 import ImageLoader from '../../../common/imageLoader/ImageLoader'
 const Banners = ({ data }) => {
-  const [showLoader,setShowLoader] = useState(true)
-  const onImageLoad = ()=>{
-    setShowLoader(false)
-  }
+  // const [showLoader,setShowLoader] = useState(true)
+  // const onImageLoad = ()=>{
+  //   setShowLoader(false)
+  // }
   return (
     <Container>
       <Swiper
@@ -28,8 +28,10 @@ const Banners = ({ data }) => {
         className='mySwiper w-screen sm:w-full h=[200px] md:h-[300px]'>
         {data.map((banner) => (
           <SwiperSlide className="relative" key={banner.id}>
-            <img className="h-[200px] md:h-full w-full" src={banner.image} alt={banner.title} onLoad={onImageLoad} />
-            {showLoader && <ImageLoader/>}
+            <img className="h-[200px] md:h-full w-full" src={banner.image} alt={banner.title}  />
+            
+            {/* <img className="h-[200px] md:h-full w-full" src={banner.image} alt={banner.title} onLoad={onImageLoad} />
+            {showLoader && <ImageLoader/>} */}
           </SwiperSlide>
         ))}
       </Swiper>

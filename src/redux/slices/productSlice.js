@@ -3,7 +3,8 @@ import axios from "axios";
 import {SINGLE_PRODUCT} from "../../api/index";
 const initialState = {
     loading:'idle',
-    error:null
+    error:null,
+    data:[]
 }
 export const getProductInfo = createAsyncThunk('product/getProductInfo',async (arg)=>{
     const {id} = arg
@@ -24,9 +25,10 @@ const productSlice = createSlice({
     });
     builder.addCase(getProductInfo.fulfilled, (state, action) => {
       state.loading = "fulfilled";
-      Object.entries(action.payload).map(([key, value]) => {
-        state[key] = value;
-      });
+      // Object.entries(action.payload).map(([key, value]) => {
+      //   state[key] = value;
+      // });
+      state.data = action.payload
     });
     builder.addCase(getProductInfo.rejected, (state, action) => {
       state.loading = "reject";

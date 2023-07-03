@@ -15,8 +15,8 @@ const Search = () => {
     };
     dispatch(searchData(arg));
   }, [productName]);
-  const { loading } = useSearchState();
-  return <>{loading === "fulfilled" ? <SearchProduct /> : <PageLoader />}</>;
+  const { loading,products } = useSearchState();
+  return <>{loading === "fulfilled" && products ? <SearchProduct /> : <PageLoader />}</>;
 };
 
 export default Search;

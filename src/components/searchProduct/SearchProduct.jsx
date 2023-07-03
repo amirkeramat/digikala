@@ -5,6 +5,7 @@ import useSearchState from "../../hooks/state/useSearchState";
 import { useDispatch } from "react-redux";
 import { searchData } from "../../redux/slices/searchSlice";
 import { useParams, useNavigate } from "react-router-dom";
+import PageLoader from "../common/pageLoader/PageLoader";
 const SearchProduct = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const SearchProduct = () => {
 
   return (
     <>
-      {products.length ? (
+      {products && products.length ? (
         <Container>
           <div className=" col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 2xl:col-span-5">
             <h5>جست جوی پیشرفته</h5>
@@ -46,9 +47,9 @@ const SearchProduct = () => {
           ))}
         </Container>
       ) : (
-        <PageLoader />
+        <p>کالایی یافت نشد</p>
       )}
-      {pager ? (
+      {pager && pager.total_pages !== 0 ? (
         <Pagination
           currentPage={Number(pageNumber)}
           totalPages={pager.total_pages}

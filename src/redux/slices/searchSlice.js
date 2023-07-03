@@ -10,7 +10,7 @@ const initialState = {
 export const searchData = createAsyncThunk("search/searchData", async (arg) => {
   const { name, page } = arg;
   return await axios
-    .get(`${SEARCH_PRODUCT}q=${name}page=${page}`)
+    .get(`${SEARCH_PRODUCT}q=${name}&page=${page}`)
     .then((Response) => Response.data.results)
     .catch((error) => error.message);
 });

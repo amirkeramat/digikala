@@ -1,35 +1,35 @@
 import { useSelector } from "react-redux";
 
 const useProductState = () => {
-  const { product, recommendations, seo } = useSelector(
+  const {data } = useSelector(
     (state) => state.singleProduct
   );
-
+//  product, recommendations, seo ,
   return {
-    id: product?.id,
-    mainDetails: product?.mainDetails,
-    status: product?.status,
-    suggestion: product?.suggestion,
-    brand: product?.brand,
-    category: product?.category,
-    images: product?.images,
-    rating: product?.rating,
-    price: product?.price,
-    videos: product?.videos,
-    introduce: product?.introduce,
-    options: product?.options,
-    information: product?.information,
-    comments: {
-      ...product?.comments,
-      comments: product?.comments?.comments?.filter(
-        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
-      ),
-    },
-    lastComments:product?.last_comments,
+    id: data.product?.id,
+    mainDetails: data.product?.mainDetails,
+    status: data.product?.status,
+    suggestion: data.product?.suggestion,
+    brand: data.product?.brand,
+    category: data.product?.category,
+    images: data.product?.images,
+    rating: data.product?.rating,
+    price: data.product?.price,
+    videos: data.product?.videos,
+    introduce: data.product?.introduce,
+    options: data.product?.options,
+    information: data.product?.information,
+    // comments: {
+    //   ...product?.comments,
+    //   comments: product?.comments?.comments?.filter(
+    //     (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+    //   ),
+    // },
+    lastComments: data.product?.last_comments,
     recommended: {
-      products: recommendations,
+      products: data.recommendations,
     },
-    seo,
+    seo: data.seo,
   };
   //   return {
   //     product: {

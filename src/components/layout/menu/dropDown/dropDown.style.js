@@ -12,7 +12,7 @@ export const SubMenuItems = tw.ul`
       
 `;
 export const MenuButton = tw.i`
-flex md:hidden absolute top-10 right-2 p-2  bg-blue-500 text-yellow-500 z-20 text-4xl cursor-pointer rounded-full
+flex md:hidden absolute top-10 right-2 p-2  z-20 text-4xl cursor-pointer rounded-full
 `;
 export const CloseButton = tw.i`
    text-blue-500 text-5xl  block text-center cursor-pointer py-2

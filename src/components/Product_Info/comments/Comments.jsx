@@ -31,7 +31,7 @@ const Comments = () => {
   return (
     <Container ref={ref}>
       <Title>نظرات کاربران</Title>
-      {loading === "fulfilled" && comments?.length ? (
+      {loading === "fulfilled" && comments ? (
         <CommentsWrapper $showMore={showMore}>
           <CommentsLength>
             <p>مرتب سازی</p>
@@ -87,7 +87,7 @@ const Comments = () => {
         </CommentsWrapper>
       ) : null}
 
-      {comments.length ? (
+      {comments ? (
         <>
           <ShowMoreBtn
             onClick={() => setShowMore((prv) => !prv)}
@@ -103,7 +103,9 @@ const Comments = () => {
             onPageChange={onPageChangeHandler}
           />
         </>
-      ) : null}
+      ) : (
+        <p>نظری وجود ندارد</p>
+      )}
     </Container>
   );
 };
