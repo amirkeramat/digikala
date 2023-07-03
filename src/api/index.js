@@ -14,6 +14,7 @@ export const CATEGORY =
   // "https://leverapi.f4rd1n.ir/api/digikala/categories/[categoryId]/search?page=[page]";
 
 export const SEARCH_PRODUCT =
+  "https://leverapi.f4rd1n.ir/api/digikala/search?";
   "https://leverapi.f4rd1n.ir/api/digikala/search?q=[query]&page=[page]";
 export const SEARCH_PRODUCT_BY_PRICE =
   "https://leverapi.f4rd1n.ir/api/digikala/search?price[max]=[maxPrice]&price[min]=[minPrice]&q=[query]&page=[page]";
