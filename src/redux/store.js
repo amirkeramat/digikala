@@ -13,7 +13,7 @@ const store = configureStore({
     categoriesStore: categoriesState,
     searchStore: searchReducer,
   },
-  // devTools: false,
+  devTools: false,
 });
 
 export default store;

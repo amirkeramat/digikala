@@ -88,7 +88,7 @@ const Pagination = ({
       />
       <PaginationItem
         page={pagesCount}
-        title="آحر"
+        title="آخر"
         currentPage={currentPage}
         onPageChange={() => onPageChange(pagesCount)}
         isDisabled={isLastPage}
