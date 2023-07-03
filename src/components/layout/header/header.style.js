@@ -2,16 +2,16 @@ import tw from "tailwind-styled-components";
 
 
 export const Container = tw.header`
-container w-full flex justify-between py-2 px-4 flex-wrap
-`;
-export const NavbarLeft = tw.div`
-left-side flex items-center justify-center md:justify-evenly flex-1
+container w-full flex justify-between py-2 px-4 flex-wrap 
 `;
 export const NavbarRight = tw.div`
-right-side flex items-center justify-end flex-1
+right-side flex items-center justify-center md:justify-evenly flex-1 md:flex-none
+`;
+export const NavbarLeft = tw.div`
+left-side flex items-center justify-end 
 `;
 
-export const SearchForm = tw.form`
+export const Form = tw.form`
 w-full
 `;
 export const SearchBox = tw.div`
@@ -26,6 +26,6 @@ export const SearchButton = tw.button`
 absolute top-[10px] right-2 text-3xl text-gray-400`;
 
 export const LoginButton = tw.button`
-flex items-center border  border-gray-400 p-2 bg-gray-200 rounded`;
+ items-center border  border-gray-400 p-2 bg-gray-200 rounded hidden md:flex`;
 export const LineSep = tw.div`
 w-[2px] h-[20px] bg-gray-400 mx-5`;

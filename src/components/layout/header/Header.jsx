@@ -7,25 +7,25 @@ import {
   LineSep,
   SearchBox,
 } from "./header.style";
-import SearchBar from "./SearchBar";
+import SearchForm from "./SearchForm";
 import { FiShoppingCart, FiLogIn } from "react-icons/fi";
 import { NavLink, Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <Container>
-      <NavbarLeft>
+      <NavbarRight>
         <Link to={"/"}>
           <img
-            src='/light-logo.png'
-            alt='bluebee-Logo'
+            src="/light-logo.png"
+            alt="bluebee-Logo"
             className="mix-blend-color-burn contrast-[1] h-[70px] ms-4 md:ms-0"
           />
         </Link>
         <SearchBox>
-          <SearchBar />
+          <SearchForm />
         </SearchBox>
-      </NavbarLeft>
-      <NavbarRight>
+      </NavbarRight>
+      <NavbarLeft>
         <LoginButton>
           <FiLogIn />
           <NavLink>
@@ -36,7 +36,7 @@ export default function Navbar() {
         <NavLink>
           <FiShoppingCart />
         </NavLink>
-      </NavbarRight>
+      </NavbarLeft>
     </Container>
   );
 }
