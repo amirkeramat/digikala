@@ -7,13 +7,15 @@ import {
   Container,
   MenuItems,
   SubMenuItems,
+  CloseButton,
 } from "./dropDown.style";
 import { menuItems, usefulLinks } from "../../../../constants/index";
 
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import SubMenu from "./subMenu/SubMenu";
-import SearchBar from "../../header/SearchBar";
+import SearchForm from "../../header/SearchForm";
 export default function DropDown() {
   const [toggle, setToggle] = useState(false);
   if (toggle) {
@@ -28,8 +30,10 @@ export default function DropDown() {
       </MenuButton>
       <MenuItems $toggle={toggle}>
         <SubMenuItems>
-          <SearchBar />
-          <br />
+          <CloseButton>
+            <AiOutlineCloseCircle onClick={() => setToggle((prv) => !prv)} />
+          </CloseButton>
+          <SearchForm />
           <SepLine />
           {usefulLinks.map((link) => (
             <UseFullLinks key={link.id}>
@@ -45,6 +49,7 @@ export default function DropDown() {
               title={menuItem.title}
               icon={menuItem.icon}
               sub={menuItem.sub}
+              setToggle={setToggle}
             />
           ))}
         </SubMenuItems>

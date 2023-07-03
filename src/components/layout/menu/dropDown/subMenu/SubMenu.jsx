@@ -9,7 +9,7 @@ import {
   SepLine,
   SubDropdownLink,
 } from "./subMenu.style";
-export default function SubMenu({ id, title, icon, sub }) {
+export default function SubMenu({ id, title, icon, sub, setToggle }) {
   const [showSub, setShowSub] = useState(false);
   return (
     <ListItem>
@@ -22,7 +22,12 @@ export default function SubMenu({ id, title, icon, sub }) {
           <SubDropdownItem key={item.id}>
             <SepLine />
             <SubDropdownLink>
-              <Link to={`category/${item.code}`}>{item.title}</Link>
+              <Link
+                onClick={() => setToggle((prv) => !prv)}
+                to={`category/${item.code}`}
+              >
+                {item.title}
+              </Link>
             </SubDropdownLink>
           </SubDropdownItem>
         ))}

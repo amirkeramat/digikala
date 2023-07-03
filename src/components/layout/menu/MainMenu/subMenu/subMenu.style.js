@@ -18,7 +18,7 @@ export const SubDropdownItem = tw.li`
   flex items-center
 `;
 export const SepLine = tw.div`
-    bg-red-500 w-[2px] h-[30px] me-5
+    bg-blue-500 w-[2px] h-[30px] me-5
 `;
 export const SubDropdownLink = tw.span`
     text-gray-800 hover:text-red-500
