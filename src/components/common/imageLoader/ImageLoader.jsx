@@ -1,6 +1,7 @@
 import Loader from "../../../assets/imageLoader.svg";
+import { Image } from "./imageLoader.style";
 const ImageLoader = () => {
-  return <img className=" w-[240px] h-[240px]" src={Loader} />;
-}
+  return <Image src={Loader} />;
+};
 
-export default ImageLoader
+export default ImageLoader;
