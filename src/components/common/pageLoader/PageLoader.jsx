@@ -5,7 +5,7 @@ const PageLoader = () => {
   return (
     <Container>
       <LoaderBox>
-        <img className="w-[200px]" src="/light-logo.png" />
+        <img className="w-[200px]" src="./light-logo.png" />
         <img className=" h-[100px]" src={ImageLoader} />
       </LoaderBox>
     </Container>
