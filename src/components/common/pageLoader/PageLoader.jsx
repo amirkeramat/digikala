@@ -1,5 +1,5 @@
 import React from "react";
-import ImageLoader from "../../../assets/imageLoader.svg";
+import ImageLoader from "./imageLoader.svg";
 import { Container, LoaderBox } from "./pageLoader.style";
 const PageLoader = () => {
   return (
