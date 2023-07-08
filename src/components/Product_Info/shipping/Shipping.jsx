@@ -8,7 +8,7 @@ const Shipping = () => {
   const { price } = useProductState();
   const { current_price, prev_price, is_incredible, discount_percent } = price;
   return (
-    <div className="h-[500px] flex flex-col justify-evenly bg-gray-300/50 shadow-xl rounded-xl p-6">
+    <div className="h-[400px] flex flex-col justify-evenly bg-gray-300/50 shadow-xl rounded-xl p-6">
       <h1 className="font-bold text-3xl">فروشنده</h1>
       <span className="flex items-center">
         <FiShoppingBag className="text-blue-400" />
@@ -21,12 +21,12 @@ const Shipping = () => {
       <SepRow />
 
       <span className="">
-        <p className="text-gray-400 bg-gray-100 w-[150px] rounded-xl">
-          موجود در انبار فروشنده:
-        </p>
-        <p className="text-red-400 flex items-center">
+        <p className="text-red-400 flex items-center py-4">
           <FaShippingFast />
           ارسال فوری
+        </p>
+        <p className="text-gray-400 bg-gray-100 w-[150px] rounded-xl">
+          موجود در انبار فروشنده
         </p>
       </span>
       <SepRow />
