@@ -9,8 +9,8 @@ export const Li = tw.li`
         ? "cursor-not-allowed text-gray-400 pointer-events-none"
         : "cursor-pointer text-gray-950"}
         
-    ${(p) => (p.$active  ? "bg-blue-500" : "bg-white")}
+    ${(p) => (p.$active  ? "bg-blue-500 text-gray-50" : "bg-white")}
 
-    w-[50px] h-[50px] rounded-full mx-2 flex justify-center items-center 
+    w-[40px] h-[40px] rounded-full mx-2 flex justify-center items-center 
    
 `;
