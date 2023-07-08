@@ -6,6 +6,7 @@ const usefulLinks = [
   {
     id: 1,
     title: "سوپر مارکت",
+    code: "food-beverage",
     icon: <CiShoppingBasket />,
   },
   {
