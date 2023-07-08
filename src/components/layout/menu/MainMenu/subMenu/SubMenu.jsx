@@ -9,11 +9,13 @@ import {
   SepLine,
   SubDropdownLink,
 } from "./subMenu.style";
-export default function SubMenu({ id, title, icon, sub }) {
+export default function SubMenu({ id, title, icon, sub ,code}) {
   return (
     <ListItem>
       {icon}
-      <ListTitle> {title}</ListTitle>
+      <Link to={`category/${code}`}>
+        <ListTitle> {title}</ListTitle>
+      </Link>
       <SubDropdown>
         <SubDropdownItems>
           {sub.map((item) => (
