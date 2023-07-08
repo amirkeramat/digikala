@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <Container>
       <Header />
       <Menu />
-      <main>{children}</main>
+      <main className="h-full">{children}</main>
       <Footer/>
     </Container>
   );
