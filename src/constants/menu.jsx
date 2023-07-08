@@ -108,6 +108,7 @@ const menu = {
     {
       id: 1,
       title: "کالای دیجیتال",
+      code: "electronic-devices",
       icon: <BiMobileAlt />,
       sub: [
         {
@@ -135,6 +136,7 @@ const menu = {
     {
       id: 2,
       title: "تجهیزات صنعتی",
+      code:"vehicles",
       icon: <AiOutlineCar />,
       sub: [
         {
@@ -162,6 +164,7 @@ const menu = {
     {
       id: 3,
       title: "مد و پوشاک",
+      code: "apparel",
       icon: <TbShirt />,
       sub: [
         {
@@ -190,6 +193,7 @@ const menu = {
       id: 4,
       title: "کالاهای سوپرمارکتی",
       icon: <FiCoffee />,
+      code: "food-beverage",
       sub: [
         {
           id: 1,
@@ -216,6 +220,7 @@ const menu = {
     {
       id: 5,
       title: "کودک و نوزاد",
+      code: "mother-and-child",
       icon: <MdOutlineToys />,
       sub: [
         {
@@ -243,6 +248,7 @@ const menu = {
     {
       id: 6,
       title: "زیبایی و سلامت",
+      code: "personal-appliance",
       icon: <GiPearlNecklace />,
       sub: [
         {
@@ -270,6 +276,7 @@ const menu = {
     {
       id: 7,
       title: "خانه و آشپزخانه",
+      code:"home-and-kitchen",
       icon: <TbToolsKitchen />,
       sub: [
         {
@@ -298,6 +305,7 @@ const menu = {
       id: 8,
       title: "کتاب و لوازم تحریر",
       icon: <BsBook />,
+      code:"book-and-media",
       sub: [
         {
           id: 1,
@@ -324,6 +332,7 @@ const menu = {
     {
       id: 9,
       title: "ورزش و سفر",
+      code:"sport-entertainment",
       icon: <MdSportsSoccer />,
       sub: [
         {
