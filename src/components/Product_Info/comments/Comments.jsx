@@ -91,7 +91,7 @@ const Comments = () => {
         <>
           <ShowMoreBtn
             onClick={() => setShowMore((prv) => !prv)}
-            className="ms-8 w-[100px] bg-blue-500/20 p-1 rounded-xl flex justify-center items-center"
+            className="ms-8 w-[100px] bg-blue-500/20 p-1 rounded-xl flex justify-center items-center my-4"
           >
             {showMore ? "دیدگاه کمتر" : "دیدگاه بیشتر"}
           </ShowMoreBtn>
