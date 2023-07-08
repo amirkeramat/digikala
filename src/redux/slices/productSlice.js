@@ -32,7 +32,7 @@ const productSlice = createSlice({
       if(action.payload){
         state.data = action.payload
       }else{
-        data=[]
+        state.data=[]
       }
       
     });
