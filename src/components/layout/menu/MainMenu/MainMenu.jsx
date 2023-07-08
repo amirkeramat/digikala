@@ -29,6 +29,7 @@ const MainMenu = () => {
                 title={menuItem.title}
                 icon={menuItem.icon}
                 sub={menuItem.sub}
+                code={menuItem.code}
               />
             ))}
           </ul>
@@ -37,11 +38,15 @@ const MainMenu = () => {
       {usefulLinks.map((link) => (
         <UseFullLinks key={link.id}>
           <UseFullLinkIcon>{link.icon}</UseFullLinkIcon>
-          <Link>{link.title}</Link>
+          {link.code ? (
+            <Link to={`category/${link.code}`}>{link.title}</Link>
+          ) : (
+            <Link>{link.title}</Link>
+          )}
         </UseFullLinks>
       ))}
     </>
   );
-}
+};
 
-export default MainMenu
+export default MainMenu;
