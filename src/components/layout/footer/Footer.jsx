@@ -23,7 +23,7 @@ export default function Footer() {
       </span>
       <div className="grid grid-cols-2 gap-6 md:grid-cols-5 flex-wrap mt-5">
         {icons.map((icon) => (
-          <span className="flex flex-col text-xl items-center justify-center ">
+          <span key={icon.id} className="flex flex-col text-xl items-center justify-center ">
             <img className="w-[50px]" src={icon.img} alt="" />
             <p className=" whitespace-nowrap">{icon.title}</p>
           </span>
@@ -31,20 +31,20 @@ export default function Footer() {
       </div>
       <div className="grid mt-5 grid-cols-2 md:grid-cols-4 p-2 ">
         {links.map((link) => (
-          <ul>
+          <u key={link.id}l>
             <li className="font-semibold">{link.title}</li>
             <li className="flex flex-col">
               {link.subLinks.map((subLink) => (
-                <Link>{subLink.title}</Link>
+                <Link key={subLink.id}>{subLink.title}</Link>
               ))}
             </li>
-          </ul>
+          </u>
         ))}
         <span>
           <h6>{social.title}</h6>
           <span className="flex justify-start">
             {social.icons.map((icon) => (
-              <i className="text-4xl me-4 py-4">{icon.icon}</i>
+              <i key={icon.id} className="text-4xl me-4 py-4">{icon.icon}</i>
             ))}
           </span>
         </span>

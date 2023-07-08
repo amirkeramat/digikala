@@ -34,8 +34,8 @@ const footerItems = {
       src: "/",
       subLinks: [
         { id: 1, title: "اتاق خبر در بلوبی" },
-        { id: 1, title: "فروش در بلوبی" },
-        { id: 1, title: "فرصت های شغلی" },
+        { id: 2, title: "فروش در بلوبی" },
+        { id: 3, title: "فرصت های شغلی" },
       ],
     },
     {
@@ -44,8 +44,8 @@ const footerItems = {
       src: "/",
       subLinks: [
         { id: 1, title: "پاسخ به پرسش های متداول" },
-        { id: 1, title: "رویه بازگرداندن کالا" },
-        { id: 1, title: "شرایط استفاده" },
+        { id: 2, title: "رویه بازگرداندن کالا" },
+        { id: 3, title: "شرایط استفاده" },
       ],
     },
     {
@@ -54,8 +54,8 @@ const footerItems = {
       src: "/",
       subLinks: [
         { id: 1, title: "نحوه صبت سفارش" },
-        { id: 1, title: "رویه ارسال سفارش" },
-        { id: 1, title: "شیوه های پرداخت" },
+        { id: 2, title: "رویه ارسال سفارش" },
+        { id: 3, title: "شیوه های پرداخت" },
       ],
     },
   ],
@@ -63,8 +63,8 @@ const footerItems = {
     title: "با ما همراه باشید",
     icons: [
       { id: 1, icon: <FaInstagram /> },
-      { id: 1, icon: <FaTwitter /> },
-      { id: 1, icon: <FaTelegram /> },
+      { id: 2, icon: <FaTwitter /> },
+      { id: 3, icon: <FaTelegram /> },
     ],
   },
 };

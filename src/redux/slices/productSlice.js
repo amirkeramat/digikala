@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import {SINGLE_PRODUCT} from "../../api/index";
+import { data } from "autoprefixer";
 const initialState = {
     loading:'idle',
     error:null,
@@ -28,7 +29,12 @@ const productSlice = createSlice({
       // Object.entries(action.payload).map(([key, value]) => {
       //   state[key] = value;
       // });
-      state.data = action.payload
+      if(action.payload){
+        state.data = action.payload
+      }else{
+        data=[]
+      }
+      
     });
     builder.addCase(getProductInfo.rejected, (state, action) => {
       state.loading = "reject";
