@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="container mt-10 py-2 px-4 flex flex-col justify-center w-full h-full">
       <span className="flex justify-between items-center">
         <Link to={"/"}>
-          <img src="/light-logo.png" className="w-[100px]" alt="" />
+          <img src="/logo/light-logo.png" className="w-[100px]" alt="" />
         </Link>
         <button
           onClick={() =>
