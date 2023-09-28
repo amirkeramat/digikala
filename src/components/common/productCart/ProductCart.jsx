@@ -30,16 +30,17 @@ export default function ProductCart({
       onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
     >
       <Container>
-        {showLoader && (
-          <div className="w-[150px] h-[150px]">
-            <ImageLoader />
-          </div>
-        )}
-
         <div className="flex justify-center items-center">
+          {showLoader && (
+            <div className="w-[150px] h-[150px]">
+              <ImageLoader />
+            </div>
+          )}
           <img
             src={image}
-            className="object-contain w-[150px] h-[150px]"
+            className={`object-contain w-[150px] h-[150px] ${
+              showLoader && "hidden"
+            }`}
             alt=""
             onLoad={onImageLoad}
           />

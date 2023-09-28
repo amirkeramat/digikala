@@ -24,7 +24,7 @@ const Slider = ({ data, title }) => {
       >
         <SwiperSlide className="w-[150px] h-[300px] ms-10">
           <div className="flex flex-col items-center justify-center h-full">
-            <img className="w-[50%] h-[50%]" src="/Amazings.svg" alt="" />
+            <img className="w-[50%] h-[50%]" src="./Amazings.svg" alt="" />
             <img src="/box.webp" alt="" />
           </div>
         </SwiperSlide>
@@ -47,10 +47,10 @@ const Slider = ({ data, title }) => {
         ))}
       </Swiper>
       <div className="absolute bottom-2 left-4 custom-swiper-button-next bg-white ring-2 ring-rose-400 rounded-full flex justify-center items-center w-[30px] h-[30px] z-50 cursor-pointer">
-        <img className="w-[50%] h-[50%]" src="/next.svg" alt="" />
+        <img className="w-[50%] h-[50%]" src="./next.svg" alt="" />
       </div>
       <div className="absolute bottom-2 left-24 custom-swiper-button-prev bg-white ring-2 ring-rose-400 rounded-full flex justify-center items-center w-[30px] h-[30px] z-50 cursor-pointer">
-        <img className="w-[50%] h-[50%]" src="/prev.svg" alt="" />
+        <img className="w-[50%] h-[50%]" src="./prev.svg" alt="" />
       </div>
     </Container>
   );
