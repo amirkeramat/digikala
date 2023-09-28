@@ -25,7 +25,7 @@ const Slider = ({ data, title }) => {
         <SwiperSlide className="w-[150px] h-[300px] ms-10">
           <div className="flex flex-col items-center justify-center h-full">
             <img className="w-[50%] h-[50%]" src="./Amazings.svg" alt="" />
-            <img src="/box.webp" alt="" />
+            <img src="./box.webp" alt="" />
           </div>
         </SwiperSlide>
         {data.products.map((product) => (
