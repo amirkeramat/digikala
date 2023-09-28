@@ -1,10 +1,9 @@
-import {Container,Title} from './slider.style'
+import { Container, Title } from "./slider.style";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
@@ -13,37 +12,27 @@ import ProductCart from "../../common/productCart/ProductCart";
 const Slider = ({ data, title }) => {
   return (
     <Container>
-      <Title>{title}</Title>
       <Swiper
-        slidesPerView={1}
-        spaceBetween={5}
-        freeMode={true}
-        pagination={{
-          clickable: true,
+        slidesPerView="auto"
+        spaceBetween={10}
+        navigation={{
+          nextEl: ".custom-swiper-button-next",
+          prevEl: ".custom-swiper-button-prev",
         }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 5,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-          1324: {
-            slidesPerView: 5,
-            spaceBetween: 10,
-          },
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className='mySwiper w-screen sm:w-auto p-0  md:p-4 h-[450px] '>
+        modules={[Navigation, Pagination]}
+        className="mySwiper relative w-screen sm:w-auto pe-12 py-16"
+      >
+        <SwiperSlide className="w-[150px] h-[300px] ms-10">
+          <div className="flex flex-col items-center justify-center h-full">
+            <img className="w-[50%] h-[50%]" src="/Amazings.svg" alt="" />
+            <img src="/box.webp" alt="" />
+          </div>
+        </SwiperSlide>
         {data.products.map((product) => (
-          <SwiperSlide className=' flex justify-center h-[400px]' key={product.id}>
+          <SwiperSlide
+            className=" flex justify-center w-[180px] h-[300px]"
+            key={product.id}
+          >
             <ProductCart
               key={product.id}
               id={product.id}
@@ -57,6 +46,12 @@ const Slider = ({ data, title }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="absolute bottom-2 left-4 custom-swiper-button-next bg-white ring-2 ring-rose-400 rounded-full flex justify-center items-center w-[30px] h-[30px] z-50 cursor-pointer">
+        <img className="w-[50%] h-[50%]" src="/next.svg" alt="" />
+      </div>
+      <div className="absolute bottom-2 left-24 custom-swiper-button-prev bg-white ring-2 ring-rose-400 rounded-full flex justify-center items-center w-[30px] h-[30px] z-50 cursor-pointer">
+        <img className="w-[50%] h-[50%]" src="/prev.svg" alt="" />
+      </div>
     </Container>
   );
 };

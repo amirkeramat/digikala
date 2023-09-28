@@ -26,13 +26,6 @@ const SearchProduct = () => {
     <>
       {products && products.length ? (
         <Container>
-          <div className=" col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 2xl:col-span-5">
-            <h5>جست جوی پیشرفته</h5>
-            <form>
-              <input type="text" name="" id="" />
-              
-            </form>
-          </div>
           {products.map((product) => (
             <ProductCart
               key={product.id}

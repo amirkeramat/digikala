@@ -26,17 +26,25 @@ export default function ProductCart({
   return (
     <Link
       to={`/productInfo/${id}`}
-      className="flex justify-center items-center w-full "
+      className="flex justify-center items-center w-full aspect-square md:aspect-[2.8/2] "
       onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
     >
       <Container>
-        {showLoader && <ImageLoader />}
-        <img
-          src={image}
-          className="w-[240px] h-[240px]"
-          alt=""
-          onLoad={onImageLoad}
-        />
+        {showLoader && (
+          <div className="w-[150px] h-[150px]">
+            <ImageLoader />
+          </div>
+        )}
+
+        <div className="flex justify-center items-center">
+          <img
+            src={image}
+            className="object-contain w-[150px] h-[150px]"
+            alt=""
+            onLoad={onImageLoad}
+          />
+        </div>
+
         <Title>{title}</Title>
         <PriceContainer>
           {discount_percent ? (
